@@ -54,6 +54,7 @@ cp vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 echo 'done. mostly. good stuff.'
 echo 
 echo "what's left:"
+echo ' * krypt pair'
 echo ' * configure jenv http://www.jenv.be/'
 echo ' * configure nvm https://github.com/creationix/nvm'
 echo ' * install visual studio code extensions'
