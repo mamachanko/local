@@ -6,7 +6,6 @@ xcode-select --install
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo 'export PATH="/usr/local/bin:$PATH"' >> ~/.bash_profile
-brew doctor
 
 brew install zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -54,6 +53,7 @@ echo
 echo "what's left:"
 echo ' * configure jenv http://www.jenv.be/'
 echo ' * configure nvm https://github.com/creationix/nvm'
+echo ' * brew doctor'
 echo ' * install visual studio code extensions'
 echo '   * XO'
 echo '   * shell-format'
