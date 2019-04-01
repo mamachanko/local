@@ -41,8 +41,6 @@ brew cask \
     jetbrains-toolbox \
     font-fira-code
 
-curl https://krypt.co/kr | sh
-
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 
 cp zshrc ~/.zshrc
@@ -54,7 +52,6 @@ cp vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 echo 'done. mostly. good stuff.'
 echo 
 echo "what's left:"
-echo ' * krypt pair'
 echo ' * configure jenv http://www.jenv.be/'
 echo ' * configure nvm https://github.com/creationix/nvm'
 echo ' * install visual studio code extensions'
