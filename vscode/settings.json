@@ -1,0 +1,17 @@
+{
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "workbench.startupEditor": "none",
+  "window.zoomLevel": 0,
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+  "workbench.editor.revealIfOpen": true,
+  "xo.enable": true,
+  "xo.format.enable": true,
+  "workbench.colorTheme": "Default High Contrast",
+  "editor.formatOnSave": true,
+}

@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+	name = mamachanko
+	email = sugardubz@gmail.com
+[github]
+	name = mamachanko
+[gpg]
+	program = /usr/local/bin/krgpg
+[commit]
+[tag]
+	forceSignAnnotated = true
+[commit]
+	gpgSign = true
+[core]
+	editor = vim
