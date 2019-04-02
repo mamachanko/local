@@ -2,19 +2,14 @@
 
 set -euo pipefail
 
-function say_whats_left() {
+function whats_left() {
     echo 'done. mostly. good stuff.'
     echo 
     echo "what's left:"
     echo ' * brew doctor'
+    echo ' * enable visual studio code extensions'
     echo ' * configure jenv http://www.jenv.be/'
     echo ' * configure nvm https://github.com/creationix/nvm'
-    echo ' * install visual studio code extensions'
-    echo '   * XO'
-    echo '   * shell-format'
-    echo '   * npm'
-    echo '   * Docker'
-    echo '   * Material-Theme'
     echo
     echo 'ok. bye.'
 }
@@ -26,4 +21,4 @@ function say_whats_left() {
 ./install-fonts.sh
 ./install-dotfiles.sh
 
-say_whats_left
+whats_left
