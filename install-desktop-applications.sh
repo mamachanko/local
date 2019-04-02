@@ -16,4 +16,5 @@ brew cask \
     caffeine \
     docker \
     shiftit \
-    jetbrains-toolbox
+    jetbrains-toolbox \
+    java
