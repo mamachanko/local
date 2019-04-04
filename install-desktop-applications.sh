@@ -7,7 +7,7 @@ brew cask \
     iterm2 \
     slack \
     notion \
-    zoom \
+    zoomus \
     spectrum \
     visual-studio-code \
     google-chrome \
