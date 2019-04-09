@@ -12,8 +12,11 @@
   "workbench.editor.revealIfOpen": true,
   "xo.enable": true,
   "xo.format.enable": true,
-  "workbench.colorTheme": "Night Owl",
+  "workbench.colorTheme": "Night Owl Light",
   "editor.formatOnSave": true,
   "terminal.external.osxExec": "iTerm.app",
   "workbench.panel.defaultLocation": "right",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "samverschueren.linter-xo"
+  }
 }
