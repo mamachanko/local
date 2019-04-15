@@ -8,6 +8,7 @@ brew install \
     curl \
     tree \
     direnv \
+    watch \
     cloudfoundry/tap/cf-cli \
     ag \
     git \
