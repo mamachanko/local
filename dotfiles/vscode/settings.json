@@ -12,11 +12,14 @@
   "workbench.editor.revealIfOpen": true,
   "xo.enable": true,
   "xo.format.enable": true,
-  "workbench.colorTheme": "Night Owl Light",
+  "workbench.colorTheme": "Default High Contrast",
   "editor.formatOnSave": true,
   "terminal.external.osxExec": "iTerm.app",
   "workbench.panel.defaultLocation": "right",
   "[typescriptreact]": {
     "editor.defaultFormatter": "samverschueren.linter-xo"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "PeterJausovec.vscode-docker"
   }
 }
