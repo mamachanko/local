@@ -14,7 +14,6 @@ export LANG=en_US.UTF-8
 
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
-alias sha1sum=shasum
 export EDITOR=code
 
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
