@@ -3,7 +3,7 @@
 set -euo pipefail
 
 brew tap caskroom/cask
-brew cask \
+brew cask reinstall \
     iterm2 \
     slack \
     notion \
