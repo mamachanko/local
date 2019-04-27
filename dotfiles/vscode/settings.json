@@ -12,7 +12,7 @@
   "workbench.editor.revealIfOpen": true,
   "xo.enable": true,
   "xo.format.enable": true,
-  "workbench.colorTheme": "Default High Contrast",
+  "workbench.colorTheme": "Night Owl",
   "editor.formatOnSave": true,
   "terminal.external.osxExec": "iTerm.app",
   "workbench.panel.defaultLocation": "right",
@@ -21,5 +21,6 @@
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "PeterJausovec.vscode-docker"
-  }
+  },
+  "editor.renderWhitespace": "all"
 }
