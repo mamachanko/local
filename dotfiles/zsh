@@ -11,6 +11,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
+export LESS=-Ri
 
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
