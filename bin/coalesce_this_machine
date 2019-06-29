@@ -4,14 +4,14 @@ set -euo pipefail
 
 main() {
     cd ~/
-    # write_or_check_machine_birthdate
-    # run_sprout_wrap
+    write_or_check_machine_birthdate
+    run_sprout_wrap
     run_homebrew
-    #install_krypt
-    #configure_jenv
-    #configure_nvm
-    #configure_vscode
-    #install_softwareupdate
+    install_krypt
+    configure_jenv
+    configure_nvm
+    configure_vscode
+    install_softwareupdate
 }
 
 write_or_check_machine_birthdate() {
