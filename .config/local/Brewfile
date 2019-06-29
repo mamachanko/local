@@ -1,0 +1,12 @@
+brew 'vim'
+brew 'jq'
+brew 'curl'
+brew 'tree'
+brew 'direnv'
+brew 'watch'
+brew 'ag'
+brew 'git'
+brew 'jenv'
+
+tap 'cloudfoundry/tap'
+brew 'cf-cli'
