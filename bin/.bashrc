@@ -1,3 +1,6 @@
+source ~/vendor/bash/colours.bash
+source ~/vendor/bash/git-completion.bash
+
 export LANG=en_US.UTF-8
 export EDITOR=code
 
@@ -17,6 +20,8 @@ export LSCOLORS="GxFxCxDxBxEgEdabagacad"
 export GREP_OPTIONS="--color"
 
 alias ls='ls -Glah'
+
+PS1="\[${VIOLET}\]\\w \[${GREEN}\]? \[${RESET}\]"
 
 echo "configuring direnv ..."
 eval "$(direnv hook zsh)"
