@@ -29,6 +29,14 @@ configure_shell_env() {
     export LSCOLORS="GxFxCxDxBxEgEdabagacad"
     export GREP_OPTIONS="--color"
 
+    # complete from history when pressing ↑
+    bind '"\e[A": history-search-backward'
+    # or ↓
+    bind '"\e[B": history-search-forward'
+
+    set show-all-i-amiguous on
+    set completion-ignore-case on 
+
     alias ls='ls -Glah'
     alias ll='ls'
 
