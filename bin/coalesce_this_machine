@@ -58,8 +58,10 @@ run_homebrew() {
 }
 
 configure_jenv() {
-    jenv enable-plugin export
-    exec $SHELL -l
+    # TODO: remove this once this proves to be really redundant
+    #jenv enable-plugin export
+    #exec $SHELL -l
+
     jenv add $(/usr/libexec/java_home)
 
     jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
@@ -72,11 +74,14 @@ configure_jenv() {
 }
 
 configure_nvm() {
+    source $(brew --prefix nvm)/nvm.sh
+    export NVM_DIR=~/.nvm
     nvm install v11.13.0
     nvm use v11.13.0
 }
 
 configure_vscode() {
+    code -version
     cp ~/.config/vscode/settings.json ~/Library/Application\ Support/Code/User/
     cp ~/.config/vscode/keybindings.json ~/Library/Application\ Support/Code/User/
     for extension in $(cat ~/.config/vscode/extensions); do
