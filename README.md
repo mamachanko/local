@@ -13,4 +13,6 @@ kr pair
 ## Todo
  * [ ] generate repave credentials and keep them in 1password
 
+---
+
 _Inspired by and shamelessly copied from [`scottmuc/osx-homedir`](https://github.com/scottmuc/osx-homedir/)._
