@@ -26,5 +26,5 @@ popd
 
 echo You are now ready to run:
 echo
-echo   ${target_dir}/bin/coalesce_this_machine
+echo   ${target_dir}bin/coalesce_this_machine
 echo
