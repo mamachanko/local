@@ -58,9 +58,8 @@ run_homebrew() {
 }
 
 configure_jenv() {
-  # TODO: remove this once this proves to be really redundant
-  #jenv enable-plugin export
-  #exec $SHELL -l
+  PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
 
   jenv add $(/usr/libexec/java_home)
 
