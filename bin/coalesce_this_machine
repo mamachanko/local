@@ -3,18 +3,20 @@
 set -euo pipefail
 
 main() {
-    cd ~/
+  cd ~/
 
-    write_or_check_machine_birthdate
+  write_or_check_machine_birthdate
 
-    run_sprout_wrap
-    run_homebrew
+  run_sprout_wrap
+  run_homebrew
 
-    configure_jenv
-    configure_nvm
-    configure_vscode
+  configure_jenv
+  configure_nvm
+  configure_vscode
 
-    install_softwareupdate
+  configure_tap_to_click
+
+  install_softwareupdate
 }
 
 write_or_check_machine_birthdate() {
@@ -22,13 +24,13 @@ write_or_check_machine_birthdate() {
   local birthdate
 
   birthdate_file=~/.config/local/birthdate
-  if [ ! -f "${birthdate_file}" ]
-  then
-    date > "${birthdate_file}"
+
+  if [ ! -f "${birthdate_file}" ]; then
+    date >"${birthdate_file}"
   else
     birthdate="$(cat ${birthdate_file})"
     echo This machine was born on:
-    echo 
+    echo
     echo "   ${birthdate}"
     echo
     echo Have you considered that it might be time to recreate your workstation?
@@ -37,8 +39,7 @@ write_or_check_machine_birthdate() {
 }
 
 run_sprout_wrap() {
-  if [ ! -d ~/workspace/sprout-wrap ]
-  then
+  if [ ! -d ~/workspace/sprout-wrap ]; then
     git clone https://github.com/mamachanko/sprout-wrap.git ~/workspace/sprout-wrap
   fi
 
@@ -46,8 +47,7 @@ run_sprout_wrap() {
 }
 
 run_homebrew() {
-  if [ ! -x /usr/local/bin/brew ]
-  then
+  if [ ! -x /usr/local/bin/brew ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   else
     brew update || true
@@ -58,48 +58,53 @@ run_homebrew() {
 }
 
 configure_jenv() {
-    # TODO: remove this once this proves to be really redundant
-    #jenv enable-plugin export
-    #exec $SHELL -l
+  # TODO: remove this once this proves to be really redundant
+  #jenv enable-plugin export
+  #exec $SHELL -l
 
-    jenv add $(/usr/libexec/java_home)
+  jenv add $(/usr/libexec/java_home)
 
-    jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
-    jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-9.jdk/Contents/Home/
-    jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-10.jdk/Contents/Home/
-    jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
-    jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-12.jdk/Contents/Home/
+  jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
+  jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-9.jdk/Contents/Home/
+  jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-10.jdk/Contents/Home/
+  jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
+  jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-12.jdk/Contents/Home/
 
-    jenv global 12.0.1
+  jenv global 12.0.1
 }
 
 configure_nvm() {
-    source $(brew --prefix nvm)/nvm.sh
-    export NVM_DIR=~/.nvm
-    nvm install v11.13.0
-    nvm use v11.13.0
+  source $(brew --prefix nvm)/nvm.sh
+  export NVM_DIR=~/.nvm
+  nvm install v11.13.0
+  nvm use v11.13.0
 }
 
 configure_vscode() {
-    code -version
-    cp ~/.config/vscode/settings.json ~/Library/Application\ Support/Code/User/
-    cp ~/.config/vscode/keybindings.json ~/Library/Application\ Support/Code/User/
-    for extension in $(cat ~/.config/vscode/extensions); do
-        code --force --install-extension ${extension}
-    done
+  code -version
+  cp ~/.config/vscode/settings.json ~/Library/Application\ Support/Code/User/
+  cp ~/.config/vscode/keybindings.json ~/Library/Application\ Support/Code/User/
+  for extension in $(cat ~/.config/vscode/extensions); do
+    code --force --install-extension ${extension}
+  done
+}
+
+configure_tap_to_click() {
+  defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+  defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+  defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+  defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 }
 
 install_softwareupdate() {
   local softwareupdate_indicator
   softwareupdate_indicator=~/.config/local/.softwareupdate_indicator
 
-  if [ ! -f "${softwareupdate_indicator}" ]
-  then
+  if [ ! -f "${softwareupdate_indicator}" ]; then
     echo Indicator of previous softwareupdate execution does not appear to exist.
     run_softwareupdate "${softwareupdate_indicator}"
   else
-    if last_softwareupdate_was_over_7_days_ago "${softwareupdate_indicator}"
-    then
+    if last_softwareupdate_was_over_7_days_ago "${softwareupdate_indicator}"; then
       echo Going to run a softwareupdate since it has been a while
       run_softwareupdate "${softwareupdate_indicator}"
     else
@@ -119,7 +124,7 @@ last_softwareupdate_was_over_7_days_ago() {
   local softwareupdate_indicator
   softwareupdate_indicator="$1"
   last_run=$(echo $(($(date +%s) - $(stat -t %s -f %m -- "${softwareupdate_indicator}"))))
-  last_run_days=$(( $last_run / (24 * 60 * 60) ))
+  last_run_days=$(($last_run / (24 * 60 * 60)))
   echo Last software update was $last_run_days days ago
   [ "${last_run_days}" -gt "7" ]
 }
