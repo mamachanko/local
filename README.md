@@ -13,6 +13,8 @@ kr pair
 ## Todo
  * [ ] generate repave credentials and keep them in 1password
  * [ ] move dock to bottom (and make it small)
+ * [ ] split `.bashrc` into `.bashrc` and `.bash_profile`, or should I?
+ * [ ] configure screen resolution
 
 ---
 
