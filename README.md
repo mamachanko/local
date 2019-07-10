@@ -14,6 +14,7 @@ kr pair
  * [ ] generate repave credentials and keep them in 1password
  * [ ] move dock to bottom (and make it small)
  * [ ] configure screen resolution
+ * [ ] set hostname when coalescing
 
 ---
 
