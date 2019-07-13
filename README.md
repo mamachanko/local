@@ -7,8 +7,16 @@ Start from a clean OSX installation and run:
 sudo xcodebuild -license
 curl -L https://raw.githubusercontent.com/mamachanko/local/master/bin/local_bootstrap.bash 2> /dev/null | bash
 ~/bin/coalesce_this_machine
-kr pair
 ```
+
+Manual steps:
+ * `kr pair`
+ * `set_hostname`
+ * set desktop background
+ * set active corners
+ * set screen resolution
+ * set dark mode
+ * start and configure shiftit
 
 ## Todo
  * [ ] generate repave credentials and keep them in 1password
