@@ -5,8 +5,6 @@ set -euo pipefail
 main() {
   cd ~/
 
-  write_or_check_machine_birthdate
-
   run_sprout_wrap
   run_homebrew
 
@@ -17,25 +15,6 @@ main() {
   configure_tap_to_click
 
   install_softwareupdate
-}
-
-write_or_check_machine_birthdate() {
-  local birthdate_file
-  local birthdate
-
-  birthdate_file=~/.config/local/birthdate
-
-  if [ ! -f "${birthdate_file}" ]; then
-    date >"${birthdate_file}"
-  else
-    birthdate="$(cat ${birthdate_file})"
-    echo This machine was born on:
-    echo
-    echo "   ${birthdate}"
-    echo
-    echo Have you considered that it might be time to recreate your workstation?
-    sleep 5
-  fi
 }
 
 run_sprout_wrap() {
