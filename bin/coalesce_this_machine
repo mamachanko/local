@@ -59,7 +59,7 @@ configure_nvm() {
 }
 
 configure_vscode() {
-  code -version
+  code --version
   cp ~/.config/vscode/settings.json ~/Library/Application\ Support/Code/User/
   cp ~/.config/vscode/keybindings.json ~/Library/Application\ Support/Code/User/
   for extension in $(cat ~/.config/vscode/extensions); do
