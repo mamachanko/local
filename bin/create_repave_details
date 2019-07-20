@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo Disk encryption key
+echo $(xkcd_password_generator 4)
+echo
+
+echo Password
+echo $(xkcd_password_generator 2 ' ')
+echo
+
+echo Hostname
+echo $(xkcd_password_generator 1)
+echo
+
