@@ -36,9 +36,6 @@ configure_shell_env() {
     # or ↓
     bind '"\e[B": history-search-forward'
 
-    set show-all-i-amiguous on
-    set completion-ignore-case on 
-
     alias ls='ls -Glah'
     alias ll='ls'
 
