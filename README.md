@@ -12,6 +12,7 @@ curl -L https://raw.githubusercontent.com/mamachanko/local/master/bin/local_boot
 Manual steps:
  * `kr pair`
  * `set_hostname`
+ * configure _iTerm_ to load preferences from `~/.config/iterm`
  * set desktop background
  * set active corners
  * set screen resolution
