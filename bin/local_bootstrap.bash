@@ -22,6 +22,7 @@ pushd ${target_dir}
   git remote add origin https://github.com/mamachanko/local.git
   git fetch --all
   git checkout master
+  git remote set-url origin git@github.com:mamachanko/local.git
 popd
 
 echo You are now ready to run:
