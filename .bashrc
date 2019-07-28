@@ -1,11 +1,11 @@
 main() {
-    configure_shell_env
+    configure_bash
     configure_direnv
     configure_jenv
     configure_nvm
 }
 
-configure_shell_env() {
+configure_bash() {
     echo "configuring bash ..."
 
     source ~/vendor/bash/colours.bash
@@ -30,11 +30,6 @@ configure_shell_env() {
 
     LSCOLORS="GxFxCxDxBxEgEdabagacad"
     GREP_OPTIONS="--color"
-
-    # complete from history when pressing ↑
-    bind '"\e[A": history-search-backward'
-    # or ↓
-    bind '"\e[B": history-search-forward'
 
     alias ls='ls -Glah'
     alias ll='ls'
